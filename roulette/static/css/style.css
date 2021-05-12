@@ -1,0 +1,12 @@
+.custom-nav-link {
+    display: block;
+    padding: 1rem 1rem;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.custom-nav-link:hover {
+    background-color: #001531;
+    color: white;
+}

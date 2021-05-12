@@ -1,0 +1,297 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Profile</title>
+        <meta charset="utf-8">
+        <link href="{% static "bootstrap/css/bootstrap.css" %}" rel="stylesheet">
+        <link href="{% static "css/style.css" %}" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class='container-fluid g-0'>
+            <div class='row h-100 g-0'>
+                <div class='col-2' style='background-color: #001f47'>
+                    <div class="navbar-collapse">
+                        <ul class='nav flex-column'>
+                            <li class='nav-item'>
+                                <a href='#' class='custom-nav-link text-center'>
+                                    Roulette
+                                </a>
+                            </li>
+                            <li class='nav-item'>
+                                <a href='#' class='custom-nav-link'>Profile</a>
+                            </li>
+                            <li class='nav-item'>
+                                <a href='#' class='custom-nav-link'>Roulette</a>
+                            </li>
+                            <li class='nav-item'>
+                                <a href='#' class='custom-nav-link'>About</a>
+                            </li>
+                            <li class='nav-item'>
+                                <a href='#' class='custom-nav-link'>About</a>
+                            </li>
+                            <li class='nav-item'>
+                                <a href='#' class='custom-nav-link'>About</a>
+                            </li>
+                            <li class='nav-item'>
+                                <a href='#' class='custom-nav-link'>About</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class='col-10'>
+                    <div class='row g-0' style='background-color: #001f47'>
+                        <div class="navbar-collapse">
+                            <ul class='nav text-center'>
+                                <li class='nav-item w-25'>
+                                    <a href='#' class='custom-nav-link'>Profile</a>
+                                </li>
+                                <li class='nav-item w-25'>
+                                    <a href='#' class='custom-nav-link'>Settings</a>
+                                </li>
+                                <li class='nav-item w-25'>
+                                    <a href='#' class='custom-nav-link'>Referal</a>
+                                </li>
+                                <li class='nav-item w-25'>
+                                    <a href='logout ' class='custom-nav-link'>Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class='row g-0 m-4'>
+                        <div class='row g-0'>
+                            <div class='border-bottom' style='padding-left: 10%'>
+                                <span class='fs-4'>{{ user.username }}</span>
+                            </div>
+                            <div class='row g-0 mt-3'>
+                                <div class='col-3'>
+                                    <div>
+                                        <img 
+                                            src='https://cdn.pixabay.com/photo/2017/09/25/13/12/dog-2785074__340.jpg' 
+                                            class='img-thumbnail rounded-circle mx-auto d-block'
+                                            style='width:50%; height:200px;'
+                                        >
+                                    </div>
+                                </div>
+                                <div class='col-6 ms-4'>
+                                    <ul class='list-group'>
+                                        {% if user_profile.email %}
+                                        <li class='list-group-item'>
+                                            Email: <span>{{user_profile.email}}</span> 
+                                        </li>
+                                        {% else %}
+                                        <input>
+                                        {% endif %}
+                                        {% if user_profile.phone%}
+                                        <li class='list-group-item'>
+                                            Phone: {{user_profile.phone}}
+                                        </li>
+                                        {% else %}
+                                        <li class='list-group-item'>
+                                        <form>
+                                        <label>Enter phone number: </label>
+                                        <input class='tel' name='phone'
+                                        pattern='[0-9]{3}[0-9]{2}[0-9]{3}[0-9]{2}[0-9]{2}'>
+                                        <button type='submit'>submit</button>
+                                        </form>
+                                        </li>
+                                        {% endif %}
+                                        <li class='list-group-item'>
+                                            Total Bets:
+                                        </li>
+                                        <li class='list-group-item'>
+                                            Total Income:
+                                        </li>
+                                        <li class='list-group-item'>
+                                            History:
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='row g-0 mt-4'>
+                            <span 
+                                class='text-center pt-2 pb-2 border-top border-bottom text-light' 
+                                style='background-color: #001f47; font-weight: bold'>Bet History
+                            </span>
+                            <table class="table table-hover" style='margin-bottom: 0'>
+                                <thead>
+                                    <th>
+                                        #
+                                    </th>
+                                    <th>
+                                        Win/Lose
+                                    </th>
+                                    <th>
+                                        Win Number
+                                    </th>
+                                    <th>
+                                        Hash
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Win</td>
+                                        <td>18</td>
+                                        <td>12t12gawgehwe2323gh32</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Win</td>
+                                        <td>18</td>
+                                        <td>12t12gawgehwe2323gh32</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Win</td>
+                                        <td>18</td>
+                                        <td>12t12gawgehwe2323gh32</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Win</td>
+                                        <td>18</td>
+                                        <td>12t12gawgehwe2323gh32</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='row g-0'>
+                <!-- Footer -->
+                <footer class="text-center text-lg-start bg-light text-muted">
+                <!-- Section: Social media -->
+                <section
+                    class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+                >
+                    <!-- Left -->
+                    <div class="me-5 d-none d-lg-block">
+                    <span>Get connected with us on social networks:</span>
+                    </div>
+                    <!-- Left -->
+
+                    <!-- Right -->
+                    <div>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    </div>
+                    <!-- Right -->
+                </section>
+                <!-- Section: Social media -->
+
+                <!-- Section: Links  -->
+                <section class="">
+                    <div class="container text-center text-md-start mt-5">
+                    <!-- Grid row -->
+                    <div class="row mt-3">
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3"></i>Company name
+                        </h6>
+                        <p>
+                            Here you can use rows and columns to organize your footer content. Lorem ipsum
+                            dolor sit amet, consectetur adipisicing elit.
+                        </p>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Products
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Angular</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">React</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Vue</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Laravel</a>
+                        </p>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Useful links
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Pricing</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Settings</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Orders</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Help</a>
+                        </p>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Contact
+                        </h6>
+                        <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            info@example.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                        <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <!-- Grid row -->
+                    </div>
+                </section>
+                <!-- Section: Links  -->
+
+                <!-- Copyright -->
+                <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+                    © 2021 Copyright:
+                    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+                </div>
+                <!-- Copyright -->
+                </footer>
+                <!-- Footer -->
+            </div>
+        </div>
+        <script src="{% static "bootstrap/js/bootstrap.js" %}"></script>
+        <script src="https://kit.fontawesome.com/b3971aea5c.js" crossorigin="anonymous"></script>
+    </body>
+
+</html>
